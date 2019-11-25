@@ -5,7 +5,17 @@ var url = require('url');
 var parse_url = function (remote_url) {
   if (typeof remote_url == "string")
     remote_url = url.parse(remote_url);
-  return parse_host(remote_url.hostname);
+
+  // support ips and localhost
+  if (remote_url.hostname === 'localhost' || /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/.test(remote_url.hostname)) {
+    return {
+      tld: '',
+      domain: remote_url.hostname,
+      sub: '',
+    };
+  } else {
+    return parse_host(remote_url.hostname);
+  }
 };
 
 var tlds = {
