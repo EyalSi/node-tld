@@ -27,7 +27,8 @@ var tlds = {
   "com.br": 2,
   "il": 1,
   "co.il": 2,
-  "myshopify.com": 2
+  "myshopify.com": 2,
+  "co.uk":2,
 }
 
 var parse_host = function (host) {
