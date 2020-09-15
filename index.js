@@ -30,6 +30,7 @@ var tlds = {
   "myshopify.com": 2,
   "uk": 1,
   "co.uk":2,
+  "eu":1,
 }
 
 var parse_host = function (host) {
