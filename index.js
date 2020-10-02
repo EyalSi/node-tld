@@ -33,7 +33,6 @@ var tlds = {
 }
 
 var parse_host = function (host) {
-  console.log('host:' + host);
   if (host.indexOf('://localhost') > -1) {
     return 'localhost';
   }
