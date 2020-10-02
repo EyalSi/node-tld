@@ -29,11 +29,14 @@ var tlds = {
   "co.il": 2,
   "myshopify.com": 2,
   "uk": 1,
-  "co.uk":2,
-  "eu":1,
+  "co.uk": 2,
 }
 
 var parse_host = function (host) {
+  console.log('host:' + host);
+  if (host.indexOf('://localhost') > -1) {
+    return 'localhost';
+  }
   var parts = host.split(".");
   var stack = "", tld_level = 1; //unknown tld are 1st level
   for (var i = parts.length - 1, part; i >= 0; i--) {
